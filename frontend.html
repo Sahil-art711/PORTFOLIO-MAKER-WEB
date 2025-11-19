@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Portfolio Hub — Modern Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0f14; --card:rgba(255,255,255,0.04); --muted:rgba(255,255,255,0.6);
+    --accent1:#56ccf2; --accent2:#7b61ff; --accent3:#ff6bcb;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6eef8;background:var(--bg);-webkit-font-smoothing:antialiased}
+  header{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.03)}
+  .nav{max-width:1150px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+  .brand{font-weight:800;letter-spacing:-0.5px}
+  nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+  nav a:hover{color:white}
+
+  .hero-wrap{max-width:1150px;margin:40px auto;padding:48px 20px}
+  .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+  .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:36px;border-radius:16px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 12px 50px rgba(2,6,23,0.6)}
+  .eyebrow{font-size:13px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:1px}
+  .title{font-size:44px;line-height:1.02;margin:12px 0;font-weight:900;background:linear-gradient(90deg,var(--accent1),var(--accent2),var(--accent3));-webkit-background-clip:text;color:transparent}
+  .lead{color:var(--muted);font-size:17px;margin-bottom:20px}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+  .btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#041226;padding:12px 18px;border-radius:12px;font-weight:700;border:none;cursor:pointer}
+  .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:10px 16px;border-radius:12px;cursor:pointer}
+
+  /* right column preview */
+  .preview{padding:18px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:12px}
+  .preview .name{font-weight:800;font-size:18px}
+  .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted);font-size:13px;margin-right:8px}
+
+  /* features */
+  .features{max-width:1150px;margin:30px auto 0;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+  .feature{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+  .feature h4{margin:0 0 8px 0}
+  .feature p{margin:0;color:var(--muted);font-size:14px}
+
+  /* builder/dashboard/portfolio sections */
+  .section-card{max-width:1150px;margin:36px auto;padding:26px;border-radius:14px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
+  label{display:block;margin-top:12px;color:var(--muted);font-weight:700}
+  input,textarea,select{width:100%;padding:10px;margin-top:8px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.03);color:#fff}
+  .row{display:flex;gap:12px}
+  .col{flex:1}
+
+  /* testimonials */
+  .testimonials{max-width:1150px;margin:34px auto;padding:0 20px}
+  .testimonials-grid{display:flex;gap:18px;flex-wrap:wrap}
+  .quote{flex:1;min-width:260px;background:rgba(255,255,255,0.03);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);} 
+  .quote p{margin:0;color:var(--muted)}
+  .quote strong{display:block;margin-top:10px;color:#fff}
+
+  footer{max-width:1150px;margin:60px auto;padding:20px;color:var(--muted);text-align:center}
+
+  /* responsive */
+  @media (max-width:880px){.hero{grid-template-columns:1fr;margin:auto}.title{font-size:32px}.hero{grid-template-columns:1fr}.hero-card{padding:20px}.preview{margin-top:12px}.row{flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="brand">Portfolio Hub</div>
+    <nav>
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#builder" class="nav-link">Create</a>
+      <a href="#dashboard" class="nav-link">Dashboard</a>
+      <a href="#portfolio" class="nav-link">Portfolio</a>
+      <a href="#login" class="nav-link">Login</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <div class="hero-wrap" id="home">
+    <div class="hero-card hero">
+      <div>
+        <div class="eyebrow">AI · Live Preview · HD Upload</div>
+        <h1 class="title">Portfolio Hub</h1>
+        <p class="lead">Design a beautiful developer portfolio in minutes. AI-assisted bios, live preview, GitHub import, themes and export — all built with modern UI and performance in mind.</p>
+        <div class="cta-row">
+          <button class="btn-primary" data-target="builder">Get started</button>
+          <button class="btn-ghost" data-target="dashboard">Open Dashboard</button>
+        </div>
+
+        <div style="margin-top:18px;color:var(--muted);font-size:13px">Trusted by developers • 12k+ portfolios created</div>
+      </div>
+
+      <aside class="preview">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div>
+            <div class="name" id="preview-name">Your Name</div>
+            <div style="color:var(--muted);font-size:13px;margin-top:6px" id="preview-role">Fullstack Developer • React · Django</div>
+          </div>
+          <div style="text-align:right">
+            <div class="chip">GitHub</div>
+            <div class="chip">PDF Export</div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px;border-radius:10px;overflow:hidden;background:linear-gradient(180deg,rgba(0,0,0,0.2),transparent);padding:12px;color:var(--muted);font-size:13px">
+          <strong style="color:#fff">Latest Projects</strong>
+          <ul style="margin:8px 0 0 16px;padding:0" id="preview-projects">
+            <li>Portfolio Builder — React + Django</li>
+            <li>AI Resume Parser</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="features" id="features-section">
+    <div class="feature">
+      <h4>AI Bio & Copy</h4>
+      <p>Generate professional bios and project descriptions instantly with AI templates.</p>
+    </div>
+    <div class="feature">
+      <h4>Live Preview</h4>
+      <p>Edit and see changes in real time — no reloads, no guessing.</p>
+    </div>
+    <div class="feature">
+      <h4>HD Media</h4>
+      <p>Upload high-resolution images for profile and project galleries.</p>
+    </div>
+    <div class="feature">
+      <h4>GitHub Sync</h4>
+      <p>Import repositories and display top projects automatically.</p>
+    </div>
+    <div class="feature">
+      <h4>Custom Themes</h4>
+      <p>Switch theme presets: Minimal, Glass, Neon, Corporate with one click.</p>
+    </div>
+    <div class="feature">
+      <h4>Export & Host</h4>
+      <p>Export static HTML/PDF or host directly on the platform.</p>
+    </div>
+  </section>
+
+  <!-- BUILDER (target for Get started) -->
+  <section class="section-card" id="builder" aria-label="Builder" style="display:none">
+    <h2 style="margin:0 0 12px 0">Create your portfolio</h2>
+    <p style="color:var(--muted);margin:0 0 18px 0">Fill the fields to build and preview your portfolio in real time.</p>
+    <div class="row">
+      <div class="col">
+        <label for="full_name">Full name</label>
+        <input id="full_name" placeholder="Jane Doe">
+        <label for="bio">Short bio</label>
+        <textarea id="bio" rows="3" placeholder="I build web apps..."></textarea>
+        <label for="skills">Skills (comma separated)</label>
+        <input id="skills" placeholder="React, Django, Node">
+        <label for="projects">Projects (one per line)</label>
+        <textarea id="projects" rows="4" placeholder="Project A - description
+Project B - description"></textarea>
+
+        <label for="education">Education</label>
+        <input id="education" placeholder="B.Tech in CSE, XYZ University">
+
+        <label for="linkedin">LinkedIn Profile URL</label>
+        <input id="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+
+        <label for="github">GitHub Profile URL</label>
+        <input id="github" placeholder="https://github.com/yourusername">
+
+        <label for="project_files">Upload Project Images / Files</label>
+        <input id="project_files" type="file" multiple accept="image/*,.pdf,.zip">
+
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <button class="btn-primary" id="save-profile">Save</button>
+          <button class="btn-ghost" id="generate-ai">AI Generate</button>
+        </div>
+      </div>
+      <div class="col">
+        <label>Live Preview</label>
+        <div style="margin-top:12px;padding:14px;border-radius:12px;background:rgba(255,255,255,0.02);min-height:220px" id="live-preview">
+          <div style="font-weight:800;font-size:18px" id="lp-name">Your Name</div>
+          <div style="color:var(--muted);margin-top:6px" id="lp-bio">Short bio will appear here.</div>
+          <div style="margin-top:12px" id="lp-skills">Skills: —</div>
+          <div style="margin-top:10px" id="lp-projects">Projects: —</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD (target for Open Dashboard) -->
+  <section class="section-card" id="dashboard" aria-label="Dashboard" style="display:none">
+    <h2 style="margin:0 0 12px 0">Your dashboard</h2>
+    <p style="color:var(--muted);margin:0 0 18px 0">Manage your saved portfolio, uploads, and integrations.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <div style="flex:1;min-width:260px">
+        <strong>Saved profile</strong>
+        <div style="margin-top:8px;color:var(--muted)" id="saved-info">No saved profile yet.</div>
+      </div>
+      <div style="flex:1;min-width:260px">
+        <strong>Integrations</strong>
+        <div style="margin-top:8px;color:var(--muted)">GitHub: Not connected</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO (public preview) -->
+  <section class="section-card" id="portfolio" aria-label="Portfolio Preview" style="display:none">
+    <h2 style="margin:0 0 12px 0">Public portfolio preview</h2>
+    <p style="color:var(--muted);margin:0 0 18px 0">How your public page will look to employers and clients.</p>
+    <div style="padding:18px;border-radius:12px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02)">
+      <div style="font-weight:800;font-size:20px" id="pub-name">Your Name</div>
+      <div style="color:var(--muted);margin-top:6px" id="pub-bio">Short bio will appear here.</div>
+      <div style="margin-top:12px;color:var(--muted)" id="pub-projects">Projects will be listed here.</div>
+    </div>
+  </section>
+
+  <!-- testimonials -->
+  <section class="testimonials" id="testimonials-section">
+    <h3 style="color:white;margin-bottom:16px;font-size:20px">What developers say</h3>
+    <div class="testimonials-grid">
+      <div class="quote"><p>“The AI made my entire portfolio. Unreal!”</p><strong>Aayush Singh</strong></div>
+      <div class="quote"><p>“It looks premium and updates instantly.”</p><strong>Sneha Verma</strong></div>
+      <div class="quote"><p>“GitHub auto-import is a lifesaver.”</p><strong>Rohit Mehra</strong></div>
+    </div>
+  </section>
+  <!-- LOGIN PAGE -->
+  <section class="section-card" id="login" aria-label="Login" style="display:none">
+  <div style="display:flex;gap:16px;margin-bottom:20px">
+    <button id="tab-login" class="btn-primary" style="padding:8px 16px">Login</button>
+    <button id="tab-signup" class="btn-ghost" style="padding:8px 16px">Signup</button>
+  </div>
+
+  <!-- LOGIN FORM -->
+  <div id="login-form">
+    <h2 style="margin:0 0 12px 0">Login</h2>
+    <p style="color:var(--muted);margin:0 0 18px 0">Access your account.</p>
+
+    <label for="login_email">Email</label>
+    <input id="login_email" type="email" placeholder="you@example.com">
+
+    <label for="login_password">Password</label>
+    <input id="login_password" type="password" placeholder="••••••••">
+
+    <button class="btn-primary" style="margin-top:16px">Login</button>
+  </div>
+
+  <!-- SIGNUP FORM -->
+  <div id="signup-form" style="display:none">
+    <h2 style="margin:0 0 12px 0">Create Account</h2>
+    <p style="color:var(--muted);margin:0 0 18px 0">Signup to get started.</p>
+
+    <label for="signup_name">Full Name</label>
+    <input id="signup_name" placeholder="John Doe">
+
+    <label for="signup_email">Email</label>
+    <input id="signup_email" type="email" placeholder="you@example.com">
+
+    <label for="signup_password">Password</label>
+    <input id="signup_password" type="password" placeholder="••••••••">
+
+    <button class="btn-primary" style="margin-top:16px">Create Account</button>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © 2025 Portfolio Maker — Built for developers • <a href="#" style="color:var(--muted);text-decoration:none">Privacy</a> · <a href="#" style="color:var(--muted);text-decoration:none">Terms</a>
+</footer>
+
+<script>
+(function(){
+  // small helper to escape HTML
+  function escapeHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+  // Safe scroll helper (not used for page switching but kept for compatibility)
+  function safeScrollTo(id){
+    const el = document.getElementById(id);
+    if(el) el.scrollIntoView({behavior:'smooth'});
+  }
+
+  // Page switching (Option B) - show only the requested page
+  function showPage(page){
+    const allSections=['home','features-section','testimonials-section','builder','dashboard','portfolio','login'];
+    allSections.forEach(id=>{const el=document.getElementById(id); if(el) el.style.display='none';});
+
+    if(page==='home'){
+      document.getElementById('home').style.display='block';
+      document.getElementById('features-section').style.display='grid';
+      document.getElementById('testimonials-section').style.display='block';
+      return;
+    }
+
+    const target = document.getElementById(page);
+    if(target) target.style.display='block';
+  }
+
+  // Attach nav clicks to switch pages
+  document.querySelectorAll('.nav-link').forEach(a=>{
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      const id = a.getAttribute('href').replace('#','');
+      showPage(id);
+    });
+  });
+
+  // Attach CTA buttons (data-target) to switch pages
+  document.querySelectorAll('[data-target]').forEach(btn=>{
+    btn.addEventListener('click', function(e){
+      const page = btn.getAttribute('data-target');
+      if(page) showPage(page);
+    });
+  });
+
+  // Live preview bindings for builder inputs
+  function updateLivePreview(){
+    const nameEl = document.getElementById('full_name');
+    const bioEl = document.getElementById('bio');
+    const skillsEl = document.getElementById('skills');
+    const projectsEl = document.getElementById('projects');
+
+    const name = nameEl ? nameEl.value : '';
+    const bio = bioEl ? bioEl.value : '';
+    const skills = skillsEl ? skillsEl.value : '';
+    const projects = projectsEl ? projectsEl.value : '';
+
+    const lpName = document.getElementById('lp-name'); if(lpName) lpName.textContent = name || 'Your Name';
+    const lpBio = document.getElementById('lp-bio'); if(lpBio) lpBio.textContent = bio || 'Short bio will appear here.';
+    const lpSkills = document.getElementById('lp-skills'); if(lpSkills) lpSkills.textContent = skills ? ('Skills: ' + skills) : 'Skills: —';
+    const lpProjects = document.getElementById('lp-projects'); if(lpProjects) lpProjects.textContent = projects ? ('Projects:\n' + projects) : 'Projects: —';
+
+    const previewName = document.getElementById('preview-name'); if(previewName) previewName.textContent = name || 'Your Name';
+    const previewRole = document.getElementById('preview-role'); if(previewRole) previewRole.textContent = skills ? (skills.split(',')[0].trim() + ' • Developer') : 'Fullstack Developer • React · Django';
+    const previewProjects = document.getElementById('preview-projects'); if(previewProjects){
+      const projList = projects ? projects.split('\n').map(p=>'<li>'+escapeHtml(p)+'</li>').join('') : '<li>Portfolio Builder — React + Django</li><li>AI Resume Parser</li>';
+      previewProjects.innerHTML = projList;
+    }
+  }
+
+  ['full_name','bio','skills','projects'].forEach(id=>{const el=document.getElementById(id); if(el) el.addEventListener('input', updateLivePreview);} );
+
+  // Save profile (local demo - stores to localStorage)
+  const saveBtn = document.getElementById('save-profile');
+  if(saveBtn){
+    saveBtn.addEventListener('click', ()=>{
+      const profile = {
+        name: document.getElementById('full_name') ? document.getElementById('full_name').value : '',
+        bio: document.getElementById('bio') ? document.getElementById('bio').value : '',
+        skills: document.getElementById('skills') ? document.getElementById('skills').value : '',
+        projects: document.getElementById('projects') ? document.getElementById('projects').value : ''
+      };
+      localStorage.setItem('pf_profile', JSON.stringify(profile));
+      const savedInfo = document.getElementById('saved-info'); if(savedInfo) savedInfo.textContent = 'Profile saved locally.';
+      // update public preview
+      const pubName = document.getElementById('pub-name'); if(pubName) pubName.textContent = profile.name || 'Your Name';
+      const pubBio = document.getElementById('pub-bio'); if(pubBio) pubBio.textContent = profile.bio || 'Short bio will appear here.';
+      const pubProjects = document.getElementById('pub-projects'); if(pubProjects) pubProjects.textContent = profile.projects || 'Projects will be listed here.';
+    });
+  }
+
+  // Simple AI generate demo (deterministic fallback)
+  const aiBtn = document.getElementById('generate-ai');
+  if(aiBtn){
+    aiBtn.addEventListener('click', ()=>{
+      const name = document.getElementById('full_name') ? document.getElementById('full_name').value : 'Alex Developer';
+      const skills = document.getElementById('skills') ? document.getElementById('skills').value : 'JavaScript, Python';
+      const bio = `${name} is a software developer specializing in ${skills.split(',')[0] || 'web technologies'}.`;
+      const bioEl = document.getElementById('bio'); if(bioEl) bioEl.value = bio;
+      updateLivePreview();
+      alert('AI-generated content inserted (demo).');
+    });
+  }
+
+  // On load, restore profile if exists
+  try{
+    const stored = localStorage.getItem('pf_profile');
+    if(stored){
+      const p = JSON.parse(stored);
+      if(p.name && document.getElementById('full_name')) document.getElementById('full_name').value = p.name;
+      if(p.bio && document.getElementById('bio')) document.getElementById('bio').value = p.bio;
+      if(p.skills && document.getElementById('skills')) document.getElementById('skills').value = p.skills;
+      if(p.projects && document.getElementById('projects')) document.getElementById('projects').value = p.projects;
+      updateLivePreview();
+      const savedInfo = document.getElementById('saved-info'); if(savedInfo) savedInfo.textContent = 'Loaded saved profile.';
+    }
+  }catch(e){console.warn(e)}
+
+  // SIGNUP/LOGIN TOGGLE
+  const tabLogin=document.getElementById('tab-login');
+  const tabSignup=document.getElementById('tab-signup');
+  const loginForm=document.getElementById('login-form');
+  const signupForm=document.getElementById('signup-form');
+  if(tabLogin && tabSignup && loginForm && signupForm){
+    tabLogin.addEventListener('click', ()=>{ loginForm.style.display='block'; signupForm.style.display='none'; tabLogin.classList.add('btn-primary'); tabSignup.classList.remove('btn-primary'); });
+    tabSignup.addEventListener('click', ()=>{ signupForm.style.display='block'; loginForm.style.display='none'; tabSignup.classList.add('btn-primary'); tabLogin.classList.remove('btn-primary'); });
+  }
+
+  // initialize default page
+  showPage('home');
+})();
+</script>
+</body>
+</html>
